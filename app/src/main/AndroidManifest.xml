@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".chapter_1.TestActivity" />
-        <activity android:name=".chapter_2.Chapter2Activity"></activity>
+        <activity android:name=".chapter_1.TestActivity" android:screenOrientation="portrait" />
+        <activity android:name=".chapter_2.Chapter2Activity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
