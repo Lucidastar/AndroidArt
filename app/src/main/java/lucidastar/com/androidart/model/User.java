@@ -3,6 +3,8 @@ package lucidastar.com.androidart.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import lucidastar.com.androidart.Book;
+
 /**
  * Created by qiuyouzone on 2018/2/5.
  */

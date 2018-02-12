@@ -1,9 +1,7 @@
 package lucidastar.com.androidart.chapter_2;
 
-import android.os.Message;
-import android.os.Messenger;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import lucidastar.com.androidart.R;
 
