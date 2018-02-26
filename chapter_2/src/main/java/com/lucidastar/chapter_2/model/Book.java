@@ -1,4 +1,4 @@
-package com.lucidastar.chapter_2;
+package com.lucidastar.chapter_2.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -15,6 +15,10 @@ public class Book implements Parcelable {
     public Book(int bookId, String bookName) {
         this.bookId = bookId;
         this.bookName = bookName;
+    }
+
+    public Book() {
+
     }
 
     protected Book(Parcel in) {
@@ -43,5 +47,13 @@ public class Book implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(bookId);
         dest.writeString(bookName);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", bookName='" + bookName + '\'' +
+                '}';
     }
 }

@@ -3,8 +3,10 @@ package com.lucidastar.chapter_2.manualbinder;
 import android.os.IBinder;
 import android.os.IInterface;
 
+import com.lucidastar.chapter_2.model.Book;
 
 import java.util.List;
+
 
 /**
  * Created by qiuyouzone on 2018/2/13.

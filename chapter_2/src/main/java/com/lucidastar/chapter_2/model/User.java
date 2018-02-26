@@ -3,24 +3,35 @@ package com.lucidastar.chapter_2.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.lucidastar.chapter_2.Book;
+
+import java.io.Serializable;
+
 
 /**
  * Created by qiuyouzone on 2018/2/5.
  */
 
-public class User implements Parcelable {
+public class User implements Parcelable,Serializable {
 
     public int userId;
     public String userName;
     public boolean isMale;
 
     public Book mBook;
-    protected User(Parcel in) {
+    public User(Parcel in) {
         userId = in.readInt();
         userName = in.readString();
         isMale = in.readInt() == 1 ;
         mBook = in.readParcelable(Thread.currentThread().getContextClassLoader());
+    }
+
+    public User() {
+    }
+
+    public User(int userId, String userName, boolean isMale) {
+        this.userId = userId;
+        this.userName = userName;
+        this.isMale = isMale;
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -46,5 +57,15 @@ public class User implements Parcelable {
         out.writeString(userName);
         out.writeInt(isMale ? 0 : 1);
         out.writeParcelable(mBook,0);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", isMale=" + isMale +
+                ", mBook=" + mBook +
+                '}';
     }
 }

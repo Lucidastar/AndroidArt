@@ -1,5 +1,5 @@
 // Book.aidl
-package com.lucidastar.chapter_2;
+package com.lucidastar.chapter_2.model;
 
 // Declare any non-default types here with import statements
 

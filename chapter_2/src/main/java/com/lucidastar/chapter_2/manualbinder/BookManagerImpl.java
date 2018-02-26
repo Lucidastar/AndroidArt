@@ -6,9 +6,10 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 
-
+import com.lucidastar.chapter_2.model.Book;
 
 import java.util.List;
+
 
 /**
  * Created by qiuyouzone on 2018/2/13.
