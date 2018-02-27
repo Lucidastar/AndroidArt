@@ -53,7 +53,15 @@
             android:exported="true"
             android:process=":remote" />
 
-        <activity android:name=".messenger.MessengerActivity"></activity>
+        <activity android:name=".messenger.MessengerActivity" />
+
+        <service
+            android:name=".manualbinder.aidl.BookManagerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity android:name=".manualbinder.aidl.BookManagerActivity"></activity>
     </application>
 
 </manifest>

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.lucidastar.chapter_2.manualbinder.aidl.BookManagerActivity;
+import com.lucidastar.chapter_2.messenger.MessengerActivity;
 import com.lucidastar.chapter_2.model.Book;
 import com.lucidastar.chapter_2.model.User;
 import com.lucidastar.chapter_2.utils.Constants;
@@ -36,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
                 user.mBook = new Book();
                 intent.putExtra("extra_user", (Serializable) user);
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MessengerActivity.class));
+            }
+        });
+        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BookManagerActivity.class));
             }
         });
     }
