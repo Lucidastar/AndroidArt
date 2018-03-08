@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.lucidastar.chapter_2.IBookManager;
+import com.lucidastar.chapter_2.IOnNewBookArrivedListener;
 import com.lucidastar.chapter_2.R;
 import com.lucidastar.chapter_2.model.Book;
 
@@ -50,7 +51,8 @@ public class BookManagerActivity extends AppCompatActivity {
                 List<Book> newBookList = bookManager.getBookList();
                 Log.i(TAG, "new book list: "+newBookList.toString());
 
-//                bookManager.registerListener();
+                bookManager.registerListener(mIOnNewBookArrivedListener);
+
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -64,9 +66,28 @@ public class BookManagerActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+
+        if (mRemoteBookManager != null && mRemoteBookManager.asBinder().isBinderAlive()){
+            try {
+                Log.i(TAG, "unregister listener"+mIOnNewBookArrivedListener);
+                mRemoteBookManager.unregisterListener(mIOnNewBookArrivedListener);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
         unbindService(mConnection);
+        super.onDestroy();
     }
+
+    private IOnNewBookArrivedListener mIOnNewBookArrivedListener = new IOnNewBookArrivedListener.Stub() {
+        @Override
+        public void onNewBookArrived(Book newBook) throws RemoteException {
+//            Log.i(TAG, "onNewBookArrived: "+newBook.toString());
+            mHandler.obtainMessage(MSG_NEW_BOOK_ARRIVE,newBook).sendToTarget();
+        }
+
+    };
+
 
     private Handler mHandler = new Handler(){
         @Override

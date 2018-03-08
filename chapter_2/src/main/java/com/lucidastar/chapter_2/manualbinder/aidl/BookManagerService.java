@@ -38,6 +38,7 @@ public class BookManagerService extends Service {
             if (mListeners.contains(listener)){
                 Log.d(TAG, "already exists. ");
             }else {
+                Log.d(TAG, "add new listener. ");
                 mListeners.add(listener);
             }
         }
@@ -80,8 +81,9 @@ public class BookManagerService extends Service {
 
         for (int i = 0 ; i < mListeners.size();i++){
             IOnNewBookArrivedListener onNewBookArrivedListener = mListeners.get(i);
-            Log.i(TAG, "onNewBookArrived, notify listener:"+onNewBookArrivedListener);
+
             onNewBookArrivedListener.onNewBookArrived(book);
+            Log.i(TAG, "onNewBookArrived, notify listener:"+onNewBookArrivedListener);
         }
     }
 
