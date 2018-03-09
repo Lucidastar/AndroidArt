@@ -39,6 +39,7 @@ public class BookManagerActivity extends AppCompatActivity {
             IBookManager bookManager = IBookManager.Stub.asInterface(service);
 
             try {
+                service.linkToDeath(mDeathRecipient,0);
                 mRemoteBookManager = bookManager;
                 List<Book> bookList = bookManager.getBookList();
                 Log.i(TAG, "query book list ,list type : "+bookList.getClass().getCanonicalName());
@@ -61,6 +62,17 @@ public class BookManagerActivity extends AppCompatActivity {
         @Override
         public void onServiceDisconnected(ComponentName name) {
 
+        }
+    };
+
+    private IBinder.DeathRecipient mDeathRecipient = new IBinder.DeathRecipient() {
+        @Override
+        public void binderDied() {
+            if (mRemoteBookManager == null){
+                return;
+            }
+            mRemoteBookManager.asBinder().unlinkToDeath(mDeathRecipient,0);
+            mRemoteBookManager = null;
         }
     };
 
