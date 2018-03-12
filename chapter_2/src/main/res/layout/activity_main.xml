@@ -36,4 +36,11 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="open BookManagerActivity" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="open ProviderActivity" />
 </LinearLayout>

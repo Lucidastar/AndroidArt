@@ -2,6 +2,7 @@ package com.lucidastar.chapter_2.manualbinder.aidl;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
@@ -64,6 +65,11 @@ public class BookManagerService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
+        int check = checkCallingOrSelfPermission("com.lucidastar.chapter_2.permission.ACCESS_BOOK_SERVICE");
+        if (check == PackageManager.PERMISSION_DENIED){
+            Log.d(TAG, "onBind: 没有权限");
+            return null;
+        }
         return mBinder;
     }
 

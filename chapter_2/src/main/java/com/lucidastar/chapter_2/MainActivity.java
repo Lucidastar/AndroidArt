@@ -11,6 +11,7 @@ import com.lucidastar.chapter_2.manualbinder.aidl.BookManagerActivity;
 import com.lucidastar.chapter_2.messenger.MessengerActivity;
 import com.lucidastar.chapter_2.model.Book;
 import com.lucidastar.chapter_2.model.User;
+import com.lucidastar.chapter_2.provider.ProviderActivity;
 import com.lucidastar.chapter_2.utils.Constants;
 import com.lucidastar.chapter_2.utils.MyUtils;
 
@@ -19,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.security.Provider;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, BookManagerActivity.class));
+            }
+        });
+        findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProviderActivity.class));
             }
         });
     }
