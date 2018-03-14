@@ -73,7 +73,13 @@
             android:authorities="com.lucidastar.chapter_2.book.provider"
             android:process=":provider" />
 
-        <activity android:name=".provider.ProviderActivity"></activity>
+        <activity android:name=".provider.ProviderActivity" />
+
+        <service
+            android:name=".socket.TCPServerService"
+            android:exported="true" />
+
+        <activity android:name=".socket.TCPClientActivity"></activity>
     </application>
 
 </manifest>

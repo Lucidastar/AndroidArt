@@ -53,7 +53,7 @@ public class BookProvider extends ContentProvider {
         mSQLiteDatabase.execSQL("insert into book values (4,'IOS');");
         mSQLiteDatabase.execSQL("insert into book values (5,'Html');");
         mSQLiteDatabase.execSQL("insert into user values (1,'smith',1);");
-        mSQLiteDatabase.execSQL("insert into book values (2,'jack',2);");
+        mSQLiteDatabase.execSQL("insert into user values (2,'jack',2);");
     }
 
 

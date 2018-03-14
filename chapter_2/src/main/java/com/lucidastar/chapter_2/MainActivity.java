@@ -12,6 +12,7 @@ import com.lucidastar.chapter_2.messenger.MessengerActivity;
 import com.lucidastar.chapter_2.model.Book;
 import com.lucidastar.chapter_2.model.User;
 import com.lucidastar.chapter_2.provider.ProviderActivity;
+import com.lucidastar.chapter_2.socket.TCPClientActivity;
 import com.lucidastar.chapter_2.utils.Constants;
 import com.lucidastar.chapter_2.utils.MyUtils;
 
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ProviderActivity.class));
+            }
+        });
+        findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TCPClientActivity.class));
             }
         });
     }
