@@ -79,7 +79,14 @@
             android:name=".socket.TCPServerService"
             android:exported="true" />
 
-        <activity android:name=".socket.TCPClientActivity"></activity>
+        <activity android:name=".socket.TCPClientActivity" />
+
+        <service
+            android:name=".binderpool.BinderPoolService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".binderpool.BinderPoolActivity"></activity>
     </application>
 
 </manifest>

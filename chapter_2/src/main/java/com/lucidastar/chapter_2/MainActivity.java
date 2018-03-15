@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.lucidastar.chapter_2.binderpool.BinderPoolActivity;
 import com.lucidastar.chapter_2.manualbinder.aidl.BookManagerActivity;
 import com.lucidastar.chapter_2.messenger.MessengerActivity;
 import com.lucidastar.chapter_2.model.Book;
@@ -66,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, TCPClientActivity.class));
+            }
+        });
+        findViewById(R.id.button6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BinderPoolActivity.class));
             }
         });
     }
