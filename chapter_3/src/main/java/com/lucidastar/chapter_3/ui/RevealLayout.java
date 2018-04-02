@@ -199,4 +199,9 @@ public class RevealLayout extends LinearLayout implements Runnable {
             }
         }
     };
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return super.onInterceptTouchEvent(ev);
+    }
 }

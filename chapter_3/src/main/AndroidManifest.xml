@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.lucidastar.TestActivity" />
+        <activity android:name=".DemoActivity_1"></activity>
     </application>
 
 </manifest>
