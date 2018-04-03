@@ -110,7 +110,6 @@ public class HorizontalScrollViewEx extends ViewGroup {
                     intercept = true;
                 }
                 break;
-
             case MotionEvent.ACTION_MOVE:
                 int delayX = x - mLastXIntercept;
                 int delayY = y - mLastYIntercept;
@@ -120,15 +119,12 @@ public class HorizontalScrollViewEx extends ViewGroup {
                     intercept = false;
                 }
                 break;
-
             case MotionEvent.ACTION_UP:
                 intercept = false;
                 break;
-
             default:
                 break;
         }
-
         mLastYIntercept = y;
         mLastXIntercept = x;
         mLastX = x;
@@ -151,9 +147,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
                 int deltaX = x - mLastX;
                 int deltaY = y - mLastY;
                 scrollBy(-deltaX,0);
-
                 break;
-
             case MotionEvent.ACTION_UP://主要做一些child的位置判定
                 int scrollX = getScrollX();
                 int scrollToChildIndex = scrollX / mChildWidth;
@@ -169,10 +163,8 @@ public class HorizontalScrollViewEx extends ViewGroup {
                 smoothScrollBy(dx, 0);
                 mVelocityTracker.clear();
                 break;
-
             default:
                 break;
-
         }
         mLastX = x;
         mLastY = y;

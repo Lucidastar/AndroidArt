@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, DemoActivity_1.class);
             startActivity(intent);
         } else if (v.getId() == R.id.button3) {
-//            Intent intent = new Intent(this, DemoActivity_2.class);
-//            startActivity(intent);
+            Intent intent = new Intent(this, DemoActivity_2.class);
+            startActivity(intent);
         }else if (v.getId() == R.id.tv_test){
 
         }
