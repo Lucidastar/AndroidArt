@@ -19,4 +19,11 @@
         android:text="打开notification_1"
         android:onClick="openNotifi_1"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开customNotification"
+        android:onClick="customNotification"
+        />
+
 </LinearLayout>

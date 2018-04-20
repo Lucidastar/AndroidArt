@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lucidastar.chapter_5.DemoActivity_1">
+    tools:context="com.lucidastar.chapter_5.DemoActivity_2">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="demo_activity_1"
+        android:text="demo_activity_2"
         android:textSize="24dp"
         android:gravity="center"
         />
