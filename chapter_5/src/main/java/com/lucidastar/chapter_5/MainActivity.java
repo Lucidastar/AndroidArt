@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setDefaults( Notification.DEFAULT_VIBRATE | Notification.DEFAULT_ALL | Notification.DEFAULT_SOUND )
                 .setTicker("悬浮通知");
-
         Intent intent = new Intent(this,DemoActivity_1.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(pendingIntent);
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 //        builder.setContentIntent(pendingIntent);
         RemoteViews remoteViews = new RemoteViews(getPackageName(),R.layout.layout_notification);
         remoteViews.setTextViewText(R.id.msg,"chapter_5");
-        remoteViews.setImageViewResource(R.id.icon,R.drawable.ic_launcher_background);
+        remoteViews.setImageViewResource(R.id.icon,R.drawable.icon1);
         PendingIntent openActivity2pendingIntent = PendingIntent.getActivity(this,0,new Intent(this,DemoActivity_2.class),PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.open_activity2,openActivity2pendingIntent);
         builder.setCustomContentView(remoteViews);

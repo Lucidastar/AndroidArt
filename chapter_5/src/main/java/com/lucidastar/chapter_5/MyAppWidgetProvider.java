@@ -10,8 +10,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.SystemClock;
+import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
+
+import java.util.TimerTask;
 
 /**
  * Created by qiuyouzone on 2018/4/20.
@@ -24,6 +27,7 @@ public class MyAppWidgetProvider extends AppWidgetProvider{
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         final int counter = appWidgetIds.length;
+        Log.i(TAG, "onUpdate: ");
         for (int i = 0; i < counter; i++) {
             int appWidgetId = appWidgetIds[i];
             onWidgetUpdate(context,appWidgetManager,appWidgetId);
@@ -32,18 +36,16 @@ public class MyAppWidgetProvider extends AppWidgetProvider{
 
     private void onWidgetUpdate(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.widget);
-
         Intent intentClick = new Intent();
         intentClick.setAction(CLICK_ACTION);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,intentClick,0);
         remoteViews.setOnClickPendingIntent(R.id.imageView1,pendingIntent);
         appWidgetManager.updateAppWidget(appWidgetId,remoteViews);
     }
-
-
     @Override
     public void onReceive(final Context context, final Intent intent) {
         super.onReceive(context, intent);
+        Log.i(TAG, "onReceive: ");
         if (intent.getAction().equals(CLICK_ACTION)){
             Toast.makeText(context,"click_it",Toast.LENGTH_SHORT).show();
             new Thread(new Runnable() {
@@ -74,6 +76,4 @@ public class MyAppWidgetProvider extends AppWidgetProvider{
         Bitmap bitmap1 = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);
         return bitmap1;
     }
-
-
 }
