@@ -6,23 +6,66 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RemoteViews;
 
+import com.lucidastar.chapter_5.utils.MyConstants;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    private static final String TAG = "MainActivity";
+
+    private LinearLayout mRemoteViewsContent;
+
+    private BroadcastReceiver mRemoteViewsReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            RemoteViews remoteViews = intent
+                    .getParcelableExtra(MyConstants.EXTRA_REMOTE_VIEWS);
+            if (remoteViews != null) {
+                updateUI(remoteViews);
+            }
+        }
+    };
+
+    private void initView() {
+        mRemoteViewsContent = (LinearLayout) findViewById(R.id.remote_views_content);
+        IntentFilter filter = new IntentFilter(MyConstants.REMOTE_ACTION);
+        registerReceiver(mRemoteViewsReceiver, filter);
+    }
+
+    private void updateUI(RemoteViews remoteViews) {
+//        View view = remoteViews.apply(this, mRemoteViewsContent);
+        int layoutId = getResources().getIdentifier("layout_simulated_notification", "layout", getPackageName());
+        View view = getLayoutInflater().inflate(layoutId, mRemoteViewsContent, false);
+        remoteViews.reapply(this, view);
+        mRemoteViewsContent.addView(view);
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(mRemoteViewsReceiver);
+        super.onDestroy();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        openNotification();
+        initView();
     }
 
     private void openNotification() {
@@ -99,5 +142,10 @@ public class MainActivity extends AppCompatActivity {
         builder.setContentIntent(openActivity2pendingIntent);
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(2,builder.build());
+    }
+
+    public void openDemo2(View view) {
+        Intent intent = new Intent(this, DemoActivity_2.class);
+        startActivity(intent);
     }
 }

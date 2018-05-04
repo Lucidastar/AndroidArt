@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DemoActivity_1" />
-        <activity android:name=".DemoActivity_2" />
+        <activity android:name=".DemoActivity_2" android:process=":myProcess"></activity>
         <activity android:name=".AndroidOPermissionActivity"></activity>
 
         <!-- Android 7.0 照片、APK下载保存路径-->

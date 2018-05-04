@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.lucidastar.chapter_5.DemoActivity_2">
 
-    <TextView
+    <Button
+        android:id="@+id/send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="demo_activity_2"
-        android:textSize="24dp"
-        android:gravity="center"
-        />
+        android:onClick="onButtonClick"
+        android:text="发送消息" />
 </android.support.constraint.ConstraintLayout>

@@ -25,5 +25,17 @@
         android:text="打开customNotification"
         android:onClick="customNotification"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开Demo2"
+        android:onClick="openDemo2"
+        />
+    <LinearLayout
+        android:id="@+id/remote_views_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
 
 </LinearLayout>
