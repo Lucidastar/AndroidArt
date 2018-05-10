@@ -5,10 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidArt.iml" filepath="$PROJECT_DIR$/AndroidArt.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://G:\MrHanWork\uploadGit\AndroidArt\chapter_2\chapter_1.iml" filepath="G:\MrHanWork\uploadGit\AndroidArt\chapter_2\chapter_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_10/chapter_10.iml" filepath="$PROJECT_DIR$/chapter_10/chapter_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_11/chapter_11.iml" filepath="$PROJECT_DIR$/chapter_11/chapter_11.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter_2/chapter_2.iml" filepath="$PROJECT_DIR$/chapter_2/chapter_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter_3/chapter_3.iml" filepath="$PROJECT_DIR$/chapter_3/chapter_3.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter_4/chapter_4.iml" filepath="$PROJECT_DIR$/chapter_4/chapter_4.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter_5/chapter_5.iml" filepath="$PROJECT_DIR$/chapter_5/chapter_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter_6/chapter_6.iml" filepath="$PROJECT_DIR$/chapter_6/chapter_6.iml" />
     </modules>
   </component>
 </project>

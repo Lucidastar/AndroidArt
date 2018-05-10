@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lucidastar.chapter_10.HandlerStudyActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler send Message"
+        android:onClick="sendHandlerMessage"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler send Message"
+        android:onClick="sendHandlerMessage2"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send Message In New Thread"
+        android:onClick="sendMessageInNewThread"
+        android:textAllCaps="false"
+        />
+    <TextView
+        android:id="@+id/tv_rec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你好"
+        android:gravity="center"
+        />
+</LinearLayout>
