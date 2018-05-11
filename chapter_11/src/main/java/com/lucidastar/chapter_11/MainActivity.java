@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,DemoActivity2.class));
     }
 
+    public void openMyLocalIntentService(View view) {
+        MyLocalIntentService.startActionFoo(this,"nihao","wohao");
+//        MyLocalIntentService.startActionBaz(this,"nihao","wohao");
+    }
+
     private class MyAsyncTask extends AsyncTask<String,Integer,String>{
 
         private String mName = "AsyncTask";

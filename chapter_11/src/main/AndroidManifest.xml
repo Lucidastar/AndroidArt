@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DemoActivity2"></activity>
+        <activity android:name=".DemoActivity2" />
+
+        <service
+            android:name=".MyLocalIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
