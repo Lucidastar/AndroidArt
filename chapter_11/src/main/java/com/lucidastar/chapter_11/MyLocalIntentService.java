@@ -3,6 +3,7 @@ package com.lucidastar.chapter_11;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -80,6 +81,11 @@ public class MyLocalIntentService extends IntentService {
      */
     private void handleActionFoo(String param1, String param2) {
         SystemClock.sleep(4000);
+        Looper myLooper = Looper.myLooper();
+        Looper mainLooper = Looper.getMainLooper();
+        Log.d(TAG, "我的Looper："+ myLooper.getThread().getId());
+        Log.d(TAG, "我的MainLooper："+ mainLooper.getThread().getId());
+        Log.d(TAG, "当前线程："+ Thread.currentThread().getId());
         Log.d(TAG, "handleActionFoo: "+param1+","+param2);
     }
 

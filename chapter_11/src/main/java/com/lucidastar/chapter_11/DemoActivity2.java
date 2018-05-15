@@ -1,6 +1,9 @@
 package com.lucidastar.chapter_11;
 
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,17 +12,57 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class DemoActivity2 extends AppCompatActivity {
 
     private static final String TAG = "DemoActivity2";
     private int id = 0;
     TextView mTextView;
+
+    Handler mHandler ;
+    Looper mLooper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo2);
         mTextView = findViewById(R.id.tv_test);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                mLooper = Looper.myLooper();
+                Looper.loop();
+            }
+        }).start();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        mHandler = new Handler(mLooper){
+            @Override
+            public void handleMessage(Message msg) {
+                if (msg.what == 0){
+                    try {
+                        Thread.sleep(5000);
+                        Log.d(TAG, "handleMessage: "+msg.obj);
+//                        mTextView.setText("睡觉之后得到的消息");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        };
+        Message msg = mHandler.obtainMessage();
+        msg.what = 0;
+        msg.obj = "你好";
+        mHandler.sendMessage(msg);//要放到队列中
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
+//        scheduledExecutorService.awaitTermination()
+
     }
 
     public void testAsyncTask(View view) {
@@ -36,6 +79,7 @@ public class DemoActivity2 extends AppCompatActivity {
                 testNum -- ;
         }
         myAsyncTask.execute(params);
+
     }
 
     private class MyAsyncTask extends AsyncTask<String,Integer,String> {
@@ -84,5 +128,7 @@ public class DemoActivity2 extends AppCompatActivity {
 
             return mName;
         }
+
     }
+
 }
