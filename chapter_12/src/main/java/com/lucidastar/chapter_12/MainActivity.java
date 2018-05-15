@@ -20,6 +20,8 @@ import java.security.NoSuchAlgorithmException;
 import static android.os.Environment.isExternalStorageRemovable;
 
 public class MainActivity extends AppCompatActivity {
+    //https://blog.csdn.net/guolin_blog/article/details/34093441
+    //https://blog.csdn.net/guolin_blog/article/details/28863651
 
     private LruCache<String, Bitmap> mMemoryCache;
     private ImageView mIvTest;
