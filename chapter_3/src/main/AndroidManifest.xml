@@ -18,7 +18,8 @@
         </activity>
         <activity android:name="com.lucidastar.TestActivity" />
         <activity android:name=".DemoActivity_1" />
-        <activity android:name=".DemoActivity_2"></activity>
+        <activity android:name=".DemoActivity_2" />
+        <activity android:name=".DemoActivity_3"></activity>
     </application>
 
 </manifest>

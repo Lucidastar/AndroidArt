@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, DemoActivity_2.class);
             startActivity(intent);
         }else if (v.getId() == R.id.tv_test){
-
+            Intent intent = new Intent(this, DemoActivity_3.class);
+            startActivity(intent);
         }
 
 

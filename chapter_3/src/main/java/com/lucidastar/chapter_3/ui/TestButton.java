@@ -2,6 +2,7 @@ package com.lucidastar.chapter_3.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -12,12 +13,14 @@ import android.widget.TextView;
  * Created by qiuyouzone on 2018/3/29.
  */
 
-public class TestButton extends TextView {
+public class TestButton extends AppCompatTextView {
     private static final String TAG = "TestButton";
     private int mScaledTouchSlop;
     // 分别记录上次滑动的坐标
     private int mLastX = 0;
     private int mLastY = 0;
+    private int mScreenWidth;
+    private int mScreenHeight;
 
     public TestButton(Context context) {
         this(context, null);
@@ -36,6 +39,7 @@ public class TestButton extends TextView {
     private void init() {
         mScaledTouchSlop = ViewConfiguration.get(getContext())
                 .getScaledTouchSlop();
+
         Log.d(TAG, "sts:" + mScaledTouchSlop);
     }
 
@@ -70,5 +74,7 @@ public class TestButton extends TextView {
         mLastY = y;
         return true;
     }
+
+
 
 }

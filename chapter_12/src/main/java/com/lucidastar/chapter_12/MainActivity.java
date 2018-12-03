@@ -12,8 +12,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -176,7 +178,11 @@ public class MainActivity extends AppCompatActivity {
         synchronized (mDiskCacheLock) {
             try{
                 if (mDiskLruCache != null && mDiskLruCache.get(key) == null) {
-                    mDiskLruCache.edit(key);
+                    DiskLruCache.Editor editor = mDiskLruCache.edit(key);
+
+                    OutputStream outputStream = editor.newOutputStream(0);
+                    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
+
                 }
             }catch (Exception e){
 
