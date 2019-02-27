@@ -26,15 +26,16 @@ public class CustomTextView extends AppCompatTextView {
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
 //        Logger.i("dispatchTouchEvent_custom");
-//        showFilter(event,"dispatchTouchEvent","custom");
-        return super.dispatchTouchEvent(event);
+        showFilter(event,"dispatchTouchEvent","custom");
+        return  true;
+//        return super.dispatchTouchEvent(event);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 //        Logger.i("onTouchEvent_custom");
         showFilter(event,"onTouchEvent","custom");
-        return super.onTouchEvent(event);
+        return true;
     }
 
     private void showFilter(MotionEvent event,String pa,String pb) {

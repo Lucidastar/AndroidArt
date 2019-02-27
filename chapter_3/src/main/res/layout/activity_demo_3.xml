@@ -10,34 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="#ec0dec"
-        android:gravity="center"
-        >
-
+        android:gravity="center">
         <com.lucidastar.chapter_3.view.LayoutB
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:background="#2967e2"
-            android:gravity="center"
-            >
-
+            android:gravity="center">
             <com.lucidastar.chapter_3.view.LayoutC
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:background="#ef4617"
-                android:gravity="center"
-                >
+                android:gravity="center">
                 <com.lucidastar.chapter_3.view.CustomTextView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="#7d19da"
                     android:clickable="true"
-                    android:onClick="TextViewOnClick"
-                    />
+                    android:onClick="TextViewOnClick" />
             </com.lucidastar.chapter_3.view.LayoutC>
         </com.lucidastar.chapter_3.view.LayoutB>
-
-
     </com.lucidastar.chapter_3.view.LayoutA>
-
-
 </android.support.constraint.ConstraintLayout>

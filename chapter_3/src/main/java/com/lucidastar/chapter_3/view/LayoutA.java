@@ -29,7 +29,7 @@ public class LayoutA extends RelativeLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {//分发
 //        Logger.i("dispatchTouchEvent_A");
-//        showFilter(ev,"dispatchTouchEvent","A");
+        showFilter(ev,"dispatchTouchEvent","A");
         return super.dispatchTouchEvent(ev);
     }
 
@@ -46,6 +46,7 @@ public class LayoutA extends RelativeLayout {
 //        Logger.i("onTouchEvent_A");
         showFilter(event,"onTouchEvent","A");
         return super.onTouchEvent(event);
+//        return true;
     }
 
     private void showFilter(MotionEvent event,String pa,String pb) {

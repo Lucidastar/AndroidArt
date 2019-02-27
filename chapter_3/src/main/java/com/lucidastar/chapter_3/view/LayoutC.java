@@ -30,7 +30,7 @@ public class LayoutC extends RelativeLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {//分发
 //        Logger.i("dispatchTouchEvent_C");
-//        showFilter(ev,"dispatchTouchEvent","C");
+        showFilter(ev,"dispatchTouchEvent","C");
         return super.dispatchTouchEvent(ev);
     }
 
